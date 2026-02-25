@@ -1,89 +1,249 @@
 /* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion'
-import { FaCode as Code, FaDatabase as Database, FaServer as Server, FaShieldAlt as Shield } from 'react-icons/fa'
+import { FaCode as Code, FaDatabase as Database, FaServer as Server, FaShieldAlt as Shield, FaReact as ReactIcon } from 'react-icons/fa'
+import { fadeUp3D, hoverTilt, staggerContainer, glowPulse, sectionReveal } from '../utils/animations';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Languages",
-      skills: ["Java", "JavaScript", "Python"],
-      icon: <Code size={24} />
-    },
-    {
-      title: "Backend",
-      skills: ["Node.js", "Express.js", "REST APIs", "JWT Authentication"],
-      icon: <Server size={24} />
+      title: "Backend Development",
+      icon: <Server size={32} />,
+      skills: [
+        { name: "Node.js", level: 90, color: "from-green-400 to-blue-400" },
+        { name: "Express.js", level: 85, color: "from-green-400 to-teal-400" },
+        { name: "REST APIs", level: 95, color: "from-blue-400 to-purple-400" },
+        { name: "JWT Authentication", level: 90, color: "from-purple-400 to-pink-400" },
+        { name: "API Design", level: 88, color: "from-blue-400 to-cyan-400" }
+      ]
     },
     {
       title: "Databases",
-      skills: ["MongoDB", "MySQL"],
-      icon: <Database size={24} />
+      icon: <Database size={32} />,
+      skills: [
+        { name: "MongoDB", level: 85, color: "from-green-400 to-emerald-400" },
+        { name: "MySQL", level: 75, color: "from-blue-400 to-sky-400" },
+        { name: "Database Design", level: 80, color: "from-purple-400 to-violet-400" },
+        { name: "ORM/ODM", level: 70, color: "from-pink-400 to-rose-400" }
+      ]
     },
     {
-      title: "Tools",
-      skills: ["Git", "GitHub", "Postman"],
-      icon: <Shield size={24} />
+      title: "Languages",
+      icon: <Code size={32} />,
+      skills: [
+        { name: "JavaScript", level: 90, color: "from-yellow-400 to-orange-400" },
+        { name: "Java", level: 85, color: "from-red-400 to-orange-400" },
+        { name: "Python", level: 70, color: "from-blue-400 to-green-400" },
+        { name: "HTML/CSS", level: 80, color: "from-orange-400 to-pink-400" }
+      ]
+    },
+    {
+      title: "Tools & DevOps",
+      icon: <Shield size={32} />,
+      skills: [
+        { name: "Git & GitHub", level: 85, color: "from-gray-400 to-gray-600" },
+        { name: "Postman", level: 90, color: "from-orange-400 to-red-400" },
+        { name: "VS Code", level: 95, color: "from-blue-400 to-indigo-400" },
+        { name: "Terminal", level: 80, color: "from-green-400 to-gray-400" }
+      ]
     }
   ]
 
   return (
     <motion.section 
       id="skills" 
-      className="py-20"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
+      className="py-24 bg-gradient-to-br from-background-950 via-background-900 to-background-950"
+      variants={sectionReveal}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center mb-20"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Skills</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Technical skills and technologies I work with to build robust backend systems.
-          </p>
+          <motion.h2 
+            className="section-title"
+            variants={fadeUp3D}
+            initial="hidden"
+            whileInView="visible"
+          >
+            Technical Skills
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
+            variants={fadeUp3D}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ delay: 0.2 }}
+          >
+            Comprehensive skill set focused on backend development, database management, and modern development practices.
+          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skillCategories.map((category, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {skillCategories.map((category, categoryIndex) => (
             <motion.div
-              key={index}
-              className="glass-card p-6 hover:shadow-xl transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              key={categoryIndex}
+              className="glass-card p-8 glow-effect card-3d"
+              variants={fadeUp3D}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="whileHover"
+              whileTap="whileTap"
+              transition={{ delay: categoryIndex * 0.15 }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-400">
+              {/* Category Header */}
+              <motion.div
+                className="flex items-center gap-4 mb-8"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+              >
+                <motion.div
+                  className="w-16 h-16 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center text-primary-400 shadow-lg"
+                  variants={glowPulse}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover="pulse"
+                  transition={{ delay: categoryIndex * 0.2 }}
+                >
                   {category.icon}
-                </div>
-                <h3 className="text-lg font-semibold">{category.title}</h3>
-              </div>
-              
-              <ul className="space-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.li
-                    key={skillIndex}
-                    className="flex items-center gap-3 text-gray-300"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ delay: index * 0.1 + skillIndex * 0.05, duration: 0.3 }}
+                </motion.div>
+                <div>
+                  <motion.h3 
+                    className="text-2xl font-bold text-white mb-2"
+                    variants={fadeUp3D}
+                    initial="hidden"
+                    whileInView="visible"
                   >
-                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                    <span>{skill}</span>
-                  </motion.li>
+                    {category.title}
+                  </motion.h3>
+                  <motion.div 
+                    className="w-20 h-1 bg-gradient-to-r from-primary-400 to-blue-400 rounded-full"
+                    variants={fadeUp3D}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ delay: 0.1 }}
+                  />
+                </div>
+              </motion.div>
+
+              {/* Skills Grid */}
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+              >
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.div
+                    key={skillIndex}
+                    className="group"
+                    variants={fadeUp3D}
+                    initial="hidden"
+                    whileInView="visible"
+                    whileHover="whileHover"
+                    whileTap="whileTap"
+                    transition={{ delay: categoryIndex * 0.15 + skillIndex * 0.08 }}
+                  >
+                    {/* Skill Header */}
+                    <div className="flex justify-between items-center mb-2">
+                      <motion.span 
+                        className="text-white font-semibold group-hover:text-primary-400 transition-colors"
+                        variants={fadeUp3D}
+                        initial="hidden"
+                        whileInView="visible"
+                      >
+                        {skill.name}
+                      </motion.span>
+                      <motion.span 
+                        className="text-gray-400 text-sm font-mono"
+                        variants={fadeUp3D}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={{ delay: 0.1 }}
+                      >
+                        {skill.level}%
+                      </motion.span>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="relative">
+                      <motion.div
+                        className="w-full h-3 bg-white/10 rounded-full overflow-hidden"
+                        variants={fadeUp3D}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={{ delay: 0.1 }}
+                      >
+                        <motion.div
+                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full shadow-lg`}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ 
+                            duration: 1.5, 
+                            delay: categoryIndex * 0.15 + skillIndex * 0.1,
+                            ease: "easeOut"
+                          }}
+                          style={{
+                            boxShadow: `0 0 15px rgba(59, 130, 246, 0.4)`
+                          }}
+                        />
+                      </motion.div>
+                    </div>
+                  </motion.div>
                 ))}
-              </ul>
+              </motion.div>
             </motion.div>
           ))}
         </div>
+
+        {/* Additional Skills Section */}
+        <motion.div
+          className="mt-16"
+          variants={fadeUp3D}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.4 }}
+        >
+          <motion.div
+            className="glass-card p-8 glow-effect"
+            variants={hoverTilt}
+            initial="hidden"
+            whileInView="visible"
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <ReactIcon size={32} className="text-blue-400" />
+              <div>
+                <h3 className="text-xl font-bold text-white">Additional Technologies</h3>
+                <p className="text-gray-400">Familiar with modern frontend and development tools</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-wrap gap-3">
+              {["React", "Tailwind CSS", "Framer Motion", "Vite", "NPM", "Yarn", "Docker", "AWS Basics"].map((tech, index) => (
+                <motion.span
+                  key={index}
+                  className="px-4 py-2 bg-white/5 text-gray-300 rounded-full border border-white/10 hover:border-primary-400/50 hover:bg-primary-500/10 transition-all duration-300 font-mono text-sm"
+                  variants={fadeUp3D}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.15)' }}
+                  transition={{ delay: 0.5 + index * 0.05 }}
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </motion.section>
   )

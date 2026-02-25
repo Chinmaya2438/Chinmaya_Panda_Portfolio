@@ -32,7 +32,10 @@ function App() {
           }
         })
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.25,
+        rootMargin: '-100px 0px -100px 0px'
+      }
     )
 
     sections.forEach(section => {
@@ -48,17 +51,20 @@ function App() {
       className="relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      {/* Progress Bar */}
+      {/* Premium Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-primary-500 z-50"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 via-blue-400 to-cyan-400 z-50 shadow-lg"
+        style={{ 
+          scaleX,
+          boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+        }}
       />
       
       <Navbar activeSection={activeSection} />
       
-      <main>
+      <main className="pt-20">
         <Hero />
         <About />
         <Experience />
@@ -67,6 +73,37 @@ function App() {
         <Certifications />
         <Footer />
       </main>
+
+      {/* Floating Background Elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary-500/10 to-blue-500/10 rounded-full blur-3xl"
+          animate={{ 
+            x: [0, 20, 0],
+            y: [0, -20, 0],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/8 to-cyan-500/8 rounded-full blur-2xl"
+          animate={{ 
+            x: [0, -30, 0],
+            y: [0, 20, 0],
+            rotate: [0, -180, -360]
+          }}
+          transition={{ 
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 5
+          }}
+        />
+      </div>
     </motion.div>
   )
 }
