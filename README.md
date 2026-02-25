@@ -52,22 +52,46 @@ This portfolio is designed to present my technical skills, internship experience
 
 ---
 
-## 📁 Project Structure
-src/
-components/
-Navbar.jsx
-Hero.jsx
-About.jsx
-Experience.jsx
-Projects.jsx
-Skills.jsx
-Certifications.jsx
-Footer.jsx
+Chinmaya_Panda_Portfolio/
+│
+├── public/
+│   ├── Chinmaya_Panda_Resume.pdf
+│   └── vite.svg
+│
+├── src/
+│   │
+│   ├── assets/
+│   │   ├── images/
+│   │   └── icons/
+│   │
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Certifications.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── utils/
+│   │   └── animations.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── index.html
+├── package.json
+├── package-lock.json
+├── tailwind.config.js
+├── postcss.config.js
+├── vite.config.js
+├── .gitignore
+└── README.md
 
-App.jsx
-main.jsx
-index.css
-tailwind.config.js
+
+---
 
 
 ---
