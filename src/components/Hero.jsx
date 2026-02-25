@@ -77,7 +77,7 @@ const Hero = () => {
             </a>
             
             <a 
-              href="/public/CHINMAYA PANDA_RESUME_MERN.pdf" 
+              href="/CHINMAYA PANDA_RESUME_MERN.pdf" 
               download
               className="btn-secondary flex items-center gap-2"
             >
