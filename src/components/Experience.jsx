@@ -71,7 +71,7 @@ const Experience = () => {
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500/60 via-blue-500/40 to-transparent"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-white/10"></div>
           
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -121,7 +121,7 @@ const Experience = () => {
                         {exp.title}
                       </motion.h3>
                       <motion.p 
-                        className="text-primary-400 font-semibold text-lg"
+                        className="text-white/70 font-medium text-lg"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
@@ -159,8 +159,8 @@ const Experience = () => {
                         transition={{ delay: index * 0.15 + itemIndex * 0.05 }}
                       >
                         <motion.div
-                          className="w-3 h-3 bg-gradient-to-r from-primary-400 to-blue-400 rounded-full mt-2 flex-shrink-0 shadow-lg"
-                          animate={{ scale: [1, 1.2, 1] }}
+                          className="w-2 h-2 bg-white/40 rounded-full mt-2.5 flex-shrink-0"
+                          animate={{ scale: [1, 1.2, 1], backgroundColor: ['rgba(255,255,255,0.4)', 'rgba(255,255,255,0.8)', 'rgba(255,255,255,0.4)'] }}
                           transition={{ duration: 2, repeat: Infinity, delay: itemIndex * 0.1 }}
                         />
                         <span className="leading-relaxed">{item}</span>
@@ -178,11 +178,11 @@ const Experience = () => {
                     {exp.tech.map((tech, techIndex) => (
                       <motion.span
                         key={techIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-primary-500/20 to-blue-500/20 text-primary-300 text-sm rounded-full border border-primary-500/30 font-mono"
+                        className="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-full border border-white/10 font-mono"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
-                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.3)' }}
+                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
                         transition={{ delay: index * 0.15 + exp.description.length * 0.05 + techIndex * 0.05 }}
                       >
                         {tech}
@@ -213,7 +213,7 @@ const Experience = () => {
             whileTap="whileTap"
           >
             <motion.div
-              className="w-3 h-3 bg-primary-400 rounded-full animate-pulse"
+              className="w-3 h-3 bg-white/80 rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.5)]"
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />

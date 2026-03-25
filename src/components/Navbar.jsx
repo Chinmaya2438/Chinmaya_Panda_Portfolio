@@ -58,8 +58,8 @@ const Navbar = ({ activeSection }) => {
                 href={`#${item.id}`}
                 className={`relative font-semibold text-sm tracking-wide transition-all duration-300 px-4 py-2 rounded-lg ${
                   activeSection === item.id 
-                    ? 'text-primary-400 bg-gradient-to-r from-primary-500/20 to-blue-500/20 border border-primary-500/40 shadow-[0_0_20px_rgba(59,130,246,0.3)]' 
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    ? 'text-white bg-white/10 border border-white/20 backdrop-blur-sm' 
+                    : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
                 variants={hoverTilt}
                 initial="hidden"
@@ -71,7 +71,7 @@ const Navbar = ({ activeSection }) => {
                 {item.label}
                 {activeSection === item.id && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-400 to-blue-400"
+                    className="absolute bottom-0 left-0 right-0 h-[1px] bg-white opacity-50"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
@@ -87,7 +87,7 @@ const Navbar = ({ activeSection }) => {
               href="https://github.com/Chinmaya2438"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-primary-500/20 transition-all duration-300"
+              className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               variants={hoverTilt}
               initial="hidden"
               animate="visible"
@@ -100,7 +100,7 @@ const Navbar = ({ activeSection }) => {
               href="https://www.linkedin.com/in/chinmaya-panda-30a3ba3a6/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-primary-500/20 transition-all duration-300"
+              className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               variants={hoverTilt}
               initial="hidden"
               animate="visible"

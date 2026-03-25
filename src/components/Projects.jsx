@@ -6,34 +6,20 @@ import { fadeUp3D, hoverTilt, staggerContainer, sectionReveal } from '../utils/a
 const Projects = () => {
   const projects = [
     {
-      title: "Personal Finance Simplifier",
-      description: "A comprehensive financial management application with secure authentication and real-time expense tracking.",
-      tech: ["Node.js", "Express.js", "MongoDB", "JWT", "RESTful API"],
+      title: "Full-Stack E-Commerce Platform",
+      description: "A comprehensive E-Commerce web application built using the MERN stack featuring user authentication, product management, and a complete shopping experience.",
+      tech: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind CSS"],
       features: [
-        "Secure JWT-based authentication system",
-        "Real-time expense tracking and categorization",
-        "Budget management with spending limits",
-        "RESTful API with comprehensive endpoints",
-        "Data validation and error handling"
+        "User authentication and authorization",
+        "Complete shopping cart and checkout flow",
+        "Admin dashboard for product management",
+        "Responsive, modern user interface",
+        "RESTful API architecture"
       ],
-      github: "https://github.com/Chinmaya2438/personal-finance-app",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      category: "Backend API"
-    },
-    {
-      title: "Smart Study Planner",
-      description: "An intelligent task management system designed for students with priority-based organization and deadline tracking.",
-      tech: ["Node.js", "Express.js", "MongoDB", "JWT", "Task Management"],
-      features: [
-        "Priority-based task categorization",
-        "Deadline tracking with reminders",
-        "JWT authentication for data security",
-        "RESTful API design principles",
-        "User-friendly task management interface"
-      ],
-      github: "https://github.com/Chinmaya2438/smart-study-planner",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
-      category: "Backend API"
+      github: "https://github.com/Chinmaya2438/E-Commerce-Website",
+      live: "https://e-commerce-frontend-self-eight.vercel.app/",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+      category: "Full-Stack"
     }
   ]
 
@@ -96,7 +82,7 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <motion.div
-                  className="absolute top-4 right-4 bg-primary-500/90 text-white px-3 py-1 rounded-full text-sm font-medium border border-primary-400/50"
+                  className="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-sm font-medium border border-white/20"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.2 }}
@@ -135,11 +121,11 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="px-3 py-1 bg-gradient-to-r from-primary-500/20 to-blue-500/20 text-primary-300 text-sm rounded-full border border-primary-500/30 font-mono"
+                      className="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-full border border-white/10 font-mono"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
-                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.3)' }}
+                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
                       transition={{ delay: index * 0.15 + techIndex * 0.05 }}
                     >
                       {tech}
@@ -164,7 +150,7 @@ const Projects = () => {
                       transition={{ delay: index * 0.15 + featureIndex * 0.05 }}
                     >
                       <motion.div
-                        className="w-3 h-3 bg-gradient-to-r from-primary-400 to-blue-400 rounded-full mt-1 flex-shrink-0 shadow-lg group-hover:scale-125 transition-transform"
+                        className="w-1.5 h-1.5 bg-white/50 rounded-full mt-2 flex-shrink-0 group-hover:scale-125 group-hover:bg-white transition-all"
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity, delay: featureIndex * 0.1 }}
                       />
@@ -203,7 +189,10 @@ const Projects = () => {
                     </motion.div>
                   </motion.a>
                   
-                  <motion.button
+                  <motion.a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-secondary flex items-center gap-3"
                     variants={hoverTilt}
                     initial="hidden"
@@ -214,13 +203,13 @@ const Projects = () => {
                   >
                     <span>Live Demo</span>
                     <motion.div
-                      className="w-5 h-5 bg-primary-500/20 rounded-full flex items-center justify-center border border-primary-400/50"
+                      className="w-5 h-5 bg-white/10 rounded-full flex items-center justify-center border border-white/20"
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      <ExternalLink size={14} className="text-primary-400" />
+                      <ExternalLink size={12} className="text-white" />
                     </motion.div>
-                  </motion.button>
+                  </motion.a>
                 </motion.div>
               </div>
             </motion.div>
@@ -244,7 +233,7 @@ const Projects = () => {
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <div className="text-4xl font-bold bg-gradient-to-r from-primary-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+            <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 mb-4 tracking-tight">
               More Projects Coming Soon
             </div>
             <p className="text-gray-400 mb-6">Currently working on exciting new backend projects</p>

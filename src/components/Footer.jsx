@@ -59,7 +59,7 @@ const Footer = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <motion.div
-                  className="w-12 h-12 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-xl flex items-center justify-center text-primary-400 shadow-lg"
+                  className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-white shadow-sm"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -82,8 +82,22 @@ const Footer = () => {
                   whileTap="whileTap"
                   transition={{ delay: 0.1 }}
                 >
-                  <Envelope size={20} className="text-primary-400 group-hover:text-white transition-colors" />
-                  <span className="text-lg">pandachinmay38@gmail.com</span>
+                  <Envelope size={20} className="text-white/60 group-hover:text-white transition-colors" />
+                  <span className="text-lg flex-1 overflow-hidden text-ellipsis whitespace-nowrap">pandachinmay38@gmail.com</span>
+                </motion.a>
+
+                <motion.a
+                  href="tel:9040575001"
+                  className="flex items-center gap-4 text-gray-300 hover:text-primary-400 transition-colors group"
+                  variants={fadeUp3D}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover="whileHover"
+                  whileTap="whileTap"
+                  transition={{ delay: 0.15 }}
+                >
+                  <Phone size={20} className="text-white/60 group-hover:text-white transition-colors" />
+                  <span className="text-lg">9040575001</span>
                 </motion.a>
               </div>
             </motion.div>
@@ -99,7 +113,7 @@ const Footer = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <motion.div
-                  className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center text-blue-400 shadow-lg"
+                  className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-white shadow-sm"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                 >
@@ -107,12 +121,12 @@ const Footer = () => {
                 </motion.div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Location</h3>
-                  <p className="text-gray-400">Based in India</p>
+                  <p className="text-gray-400">Odisha, India</p>
                 </div>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Available for remote opportunities and open to relocation. 
-                Let's discuss how we can work together across time zones.
+                Junagarh, Kalahandi, Odisha - 766014.<br />
+                Available for remote opportunities and open to relocation.
               </p>
             </motion.div>
           </motion.div>
@@ -150,7 +164,7 @@ const Footer = () => {
                   <motion.input
                     type="email"
                     placeholder="Your Email"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 transition-all duration-300"
                     variants={fadeUp3D}
                     initial="hidden"
                     whileInView="visible"
@@ -160,7 +174,7 @@ const Footer = () => {
                 <motion.input
                   type="text"
                   placeholder="Subject"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 transition-all duration-300"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
@@ -169,7 +183,7 @@ const Footer = () => {
                 <motion.textarea
                   placeholder="Your Message"
                   rows="5"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 transition-all duration-300 resize-none"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
@@ -177,7 +191,7 @@ const Footer = () => {
                 />
                 <motion.button
                   type="submit"
-                  className="btn-primary w-full py-3 text-lg font-semibold"
+                  className="btn-primary w-full py-3 text-lg font-semibold flex items-center justify-center"
                   variants={hoverTilt}
                   initial="hidden"
                   whileInView="visible"
@@ -252,7 +266,7 @@ const Footer = () => {
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <div className="text-4xl font-bold bg-gradient-to-r from-primary-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+            <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 mb-4 tracking-tight">
               Let's Build the Future
             </div>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
@@ -261,7 +275,7 @@ const Footer = () => {
             </p>
             <motion.a
               href="mailto:pandachinmay38@gmail.com"
-              className="btn-primary inline-flex items-center gap-4 text-lg px-8 py-4"
+              className="btn-primary inline-flex items-center justify-center gap-4 text-lg px-8 py-4"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -290,7 +304,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Chinmaya Panda. Crafted with React, Tailwind CSS, and Framer Motion.
           </p>
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-primary-400 to-blue-400 rounded-full mx-auto mt-4"
+            className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}

@@ -104,7 +104,7 @@ const Skills = () => {
                 whileInView="visible"
               >
                 <motion.div
-                  className="w-16 h-16 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center text-primary-400 shadow-lg"
+                  className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-white shadow-sm"
                   variants={glowPulse}
                   initial="hidden"
                   whileInView="visible"
@@ -123,7 +123,7 @@ const Skills = () => {
                     {category.title}
                   </motion.h3>
                   <motion.div 
-                    className="w-20 h-1 bg-gradient-to-r from-primary-400 to-blue-400 rounded-full"
+                    className="w-20 h-1 bg-white/30 rounded-full"
                     variants={fadeUp3D}
                     initial="hidden"
                     whileInView="visible"
@@ -153,7 +153,7 @@ const Skills = () => {
                     {/* Skill Header */}
                     <div className="flex justify-between items-center mb-2">
                       <motion.span 
-                        className="text-white font-semibold group-hover:text-primary-400 transition-colors"
+                        className="text-white font-semibold transition-colors"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
@@ -181,16 +181,13 @@ const Skills = () => {
                         transition={{ delay: 0.1 }}
                       >
                         <motion.div
-                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full shadow-lg`}
+                          className="h-full bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.3)]"
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ 
                             duration: 1.5, 
                             delay: categoryIndex * 0.15 + skillIndex * 0.1,
                             ease: "easeOut"
-                          }}
-                          style={{
-                            boxShadow: `0 0 15px rgba(59, 130, 246, 0.4)`
                           }}
                         />
                       </motion.div>
@@ -220,7 +217,7 @@ const Skills = () => {
             whileTap="whileTap"
           >
             <div className="flex items-center gap-4 mb-6">
-              <ReactIcon size={32} className="text-blue-400" />
+              <ReactIcon size={32} className="text-white" />
               <div>
                 <h3 className="text-xl font-bold text-white">Additional Technologies</h3>
                 <p className="text-gray-400">Familiar with modern frontend and development tools</p>
@@ -231,11 +228,11 @@ const Skills = () => {
               {["React", "Tailwind CSS", "Framer Motion", "Vite", "NPM", "Yarn", "Docker", "AWS Basics"].map((tech, index) => (
                 <motion.span
                   key={index}
-                  className="px-4 py-2 bg-white/5 text-gray-300 rounded-full border border-white/10 hover:border-primary-400/50 hover:bg-primary-500/10 transition-all duration-300 font-mono text-sm"
+                  className="px-4 py-2 bg-white/5 text-gray-300 rounded-full border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 font-mono text-sm"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.15)' }}
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                   transition={{ delay: 0.5 + index * 0.05 }}
                 >
                   {tech}

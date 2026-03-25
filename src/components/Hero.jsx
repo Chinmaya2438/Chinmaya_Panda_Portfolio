@@ -42,8 +42,7 @@ const Hero = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-radial"></div>
+      {/* Animated Background Removed for Minimalist Look */}
       
       {/* Floating Background Elements */}
       <div className="absolute inset-0">
@@ -67,15 +66,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* Radial Light Effect */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-radial opacity-50"
-        animate={{ 
-          opacity: [0.3, 0.6, 0.3],
-          scale: [1, 1.1, 1]
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
 
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
         {/* Main Content */}
@@ -95,7 +85,7 @@ const Hero = () => {
             animate="visible"
           >
             <motion.span 
-              className="gradient-text"
+              className="text-white"
               variants={fadeUp3D}
               initial="hidden"
               animate="visible"
@@ -122,7 +112,7 @@ const Hero = () => {
             animate="visible"
             transition={{ delay: 0.6 }}
           >
-            <span className="inline-block border-r-2 border-primary-400 pr-2">
+            <span className="inline-block border-r-2 border-white/50 pr-2">
               {displayText}
             </span>
             <span className="animate-pulse">|</span>
@@ -206,12 +196,12 @@ const Hero = () => {
               Explore My Journey
             </span>
             <motion.div
-              className="w-8 h-12 border-2 border-primary-400/50 rounded-full flex justify-center"
+              className="w-8 h-12 border-2 border-white/20 rounded-full flex justify-center"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               <motion.div
-                className="w-2 h-2 bg-primary-400 rounded-full mt-2 group-hover:scale-150 transition-transform"
+                className="w-1.5 h-1.5 bg-white/50 rounded-full mt-2 group-hover:bg-white transition-colors"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
               />

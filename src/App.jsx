@@ -55,10 +55,10 @@ function App() {
     >
       {/* Premium Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 via-blue-400 to-cyan-400 z-50 shadow-lg"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-white z-50 origin-left"
         style={{ 
           scaleX,
-          boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+          boxShadow: '0 0 10px rgba(255, 255, 255, 0.3)'
         }}
       />
       
@@ -74,35 +74,9 @@ function App() {
         <Footer />
       </main>
 
-      {/* Floating Background Elements */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary-500/10 to-blue-500/10 rounded-full blur-3xl"
-          animate={{ 
-            x: [0, 20, 0],
-            y: [0, -20, 0],
-            rotate: [0, 180, 360]
-          }}
-          transition={{ 
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/8 to-cyan-500/8 rounded-full blur-2xl"
-          animate={{ 
-            x: [0, -30, 0],
-            y: [0, 20, 0],
-            rotate: [0, -180, -360]
-          }}
-          transition={{ 
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 5
-          }}
-        />
+      {/* Floating Background Elements - Removed for professional sleekness */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-[-1]">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.03] via-background-950 to-background-950"></div>
       </div>
     </motion.div>
   )

@@ -155,8 +155,8 @@ const About = () => {
               >
                 <div className="flex items-start gap-6">
                   <motion.div
-                    className="w-16 h-16 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center text-primary-400 shadow-lg"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-white border border-white/10 shadow-sm"
+                    whileHover={{ scale: 1.1, rotate: 5, backgroundColor: 'rgba(255,255,255,0.1)' }}
                     transition={{ duration: 0.3 }}
                   >
                     {point.icon}
@@ -204,7 +204,7 @@ const About = () => {
             whileTap="whileTap"
           >
             <motion.div
-              className="text-6xl font-bold bg-gradient-to-r from-primary-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4"
+              className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 mb-4"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -228,7 +228,7 @@ const About = () => {
               B.Tech in Computer Science & Engineering
             </motion.div>
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-primary-400 to-blue-400 rounded-full mx-auto mt-4"
+              className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}

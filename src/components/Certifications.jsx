@@ -88,7 +88,7 @@ const Certifications = () => {
                   whileInView="visible"
                 >
                   <motion.div
-                    className={`w-16 h-16 bg-gradient-to-br ${cert.color} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                    className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-white border border-white/10 shadow-sm group-hover:scale-110 transition-transform duration-300"
                     variants={glowPulse}
                     initial="hidden"
                     whileInView="visible"
@@ -99,7 +99,7 @@ const Certifications = () => {
                   </motion.div>
                   <div className="flex-1">
                     <motion.h3 
-                      className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors"
+                      className="text-xl font-bold text-white mb-2 transition-colors"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
@@ -107,7 +107,7 @@ const Certifications = () => {
                       {cert.title}
                     </motion.h3>
                     <motion.p 
-                      className="text-primary-400 font-semibold text-sm mb-2"
+                      className="text-white/70 font-medium text-sm mb-2"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
