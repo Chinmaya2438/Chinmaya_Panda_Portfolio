@@ -50,10 +50,10 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
           >
-            About Me
+            ~/about $ <span className="text-primary-400 animate-blink">_</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-mono mt-4"
             variants={fadeUp3D}
             initial="hidden"
             whileInView="visible"
@@ -75,7 +75,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div
-              className="glass-card p-8 glow-effect"
+              className="ide-card p-8"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -83,15 +83,15 @@ const About = () => {
               whileTap="whileTap"
             >
               <motion.h3 
-                className="text-2xl font-bold text-white mb-4"
+                className="text-xl font-bold text-gray-100 mb-4 font-mono border-b border-editor-border pb-2"
                 variants={fadeUp3D}
                 initial="hidden"
                 whileInView="visible"
               >
-                Backend Development Philosophy
+                // Backend Development Philosophy
               </motion.h3>
               <motion.p 
-                className="text-gray-300 leading-relaxed"
+                className="text-gray-400 leading-relaxed font-mono text-sm"
                 variants={fadeUp3D}
                 initial="hidden"
                 whileInView="visible"
@@ -104,7 +104,7 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="glass-card p-8 glow-effect"
+              className="ide-card p-8"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -113,15 +113,15 @@ const About = () => {
               transition={{ delay: 0.2 }}
             >
               <motion.h3 
-                className="text-2xl font-bold text-white mb-4"
+                className="text-xl font-bold text-gray-100 mb-4 font-mono border-b border-editor-border pb-2"
                 variants={fadeUp3D}
                 initial="hidden"
                 whileInView="visible"
               >
-                Technical Approach
+                /* Technical Approach */
               </motion.h3>
               <motion.p 
-                className="text-gray-300 leading-relaxed"
+                className="text-gray-400 leading-relaxed font-mono text-sm"
                 variants={fadeUp3D}
                 initial="hidden"
                 whileInView="visible"
@@ -145,7 +145,7 @@ const About = () => {
             {aboutPoints.map((point, index) => (
               <motion.div
                 key={index}
-                className="glass-card p-8 glow-effect card-3d"
+                className="ide-card p-6"
                 variants={fadeUp3D}
                 initial="hidden"
                 whileInView="visible"
@@ -153,17 +153,17 @@ const About = () => {
                 whileTap="whileTap"
                 transition={{ delay: index * 0.15 }}
               >
-                <div className="flex items-start gap-6">
+                <div className="flex items-start gap-4">
                   <motion.div
-                    className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-white border border-white/10 shadow-sm"
-                    whileHover={{ scale: 1.1, rotate: 5, backgroundColor: 'rgba(255,255,255,0.1)' }}
+                    className="w-12 h-12 bg-editor-bg border border-editor-border rounded flex items-center justify-center text-primary-400 shadow-neon-green flex-shrink-0"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
                     {point.icon}
                   </motion.div>
                   <div className="flex-1">
                     <motion.h3 
-                      className="text-xl font-bold text-white mb-3"
+                      className="text-lg font-bold text-gray-100 mb-2 font-mono"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
@@ -171,7 +171,7 @@ const About = () => {
                       {point.title}
                     </motion.h3>
                     <motion.p 
-                      className="text-gray-400 leading-relaxed"
+                      className="text-gray-400 font-mono text-sm leading-relaxed"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
@@ -196,7 +196,7 @@ const About = () => {
           transition={{ delay: 0.4 }}
         >
           <motion.div
-            className="inline-block glass-card p-10 glow-effect border-glow-hover"
+            className="inline-block ide-card p-10 font-mono text-left"
             variants={cardFlip}
             initial="hidden"
             whileInView="visible"
@@ -204,22 +204,22 @@ const About = () => {
             whileTap="whileTap"
           >
             <motion.div
-              className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 mb-4"
-              animate={{ scale: [1, 1.05, 1] }}
+              className="text-5xl font-bold text-primary-400 mb-4"
+              animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              9.08
+              <span className="text-gray-500 text-3xl">cgpa =&gt; </span>9.08
             </motion.div>
             <motion.div 
-              className="text-gray-400 text-lg mb-2"
+              className="text-accent-amber text-sm mb-2"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
             >
-              CGPA
+              "Academic Performance"
             </motion.div>
             <motion.div 
-              className="text-sm text-gray-500 tracking-wide"
+              className="text-xs text-gray-500 tracking-wide"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -227,12 +227,6 @@ const About = () => {
             >
               B.Tech in Computer Science & Engineering
             </motion.div>
-            <motion.div
-              className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            />
           </motion.div>
         </motion.div>
       </div>

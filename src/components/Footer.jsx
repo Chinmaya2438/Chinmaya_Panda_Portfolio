@@ -27,7 +27,7 @@ const Footer = () => {
             initial="hidden"
             whileInView="visible"
           >
-            Let's Work Together
+            ~/contact $ <span className="text-primary-400 animate-blink">_</span>
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
@@ -50,31 +50,31 @@ const Footer = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div
-              className="glass-card p-8 glow-effect"
+              className="ide-card p-8"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
               whileHover="whileHover"
               whileTap="whileTap"
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-6 border-b border-editor-border pb-4">
                 <motion.div
-                  className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-white shadow-sm"
+                  className="w-10 h-10 bg-editor-bg border border-editor-border rounded flex items-center justify-center text-primary-400 shadow-neon-green"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  <Envelope size={24} />
+                  <Envelope size={20} />
                 </motion.div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Get In Touch</h3>
-                  <p className="text-gray-400">Let's start a conversation</p>
+                  <h3 className="text-xl font-bold text-white font-mono">system.contact()</h3>
+                  <p className="text-gray-400 font-mono text-sm mt-1">Initialize communication protocols</p>
                 </div>
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-4 font-mono text-sm">
                 <motion.a
                   href="mailto:pandachinmay38@gmail.com"
-                  className="flex items-center gap-4 text-gray-300 hover:text-primary-400 transition-colors group"
+                  className="flex items-center gap-4 text-gray-400 hover:text-primary-400 transition-colors group"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
@@ -82,13 +82,13 @@ const Footer = () => {
                   whileTap="whileTap"
                   transition={{ delay: 0.1 }}
                 >
-                  <Envelope size={20} className="text-white/60 group-hover:text-white transition-colors" />
-                  <span className="text-lg flex-1 overflow-hidden text-ellipsis whitespace-nowrap">pandachinmay38@gmail.com</span>
+                  <span className="text-accent-magenta">email:</span>
+                  <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-accent-amber">"pandachinmay38@gmail.com"</span>
                 </motion.a>
 
                 <motion.a
                   href="tel:9040575001"
-                  className="flex items-center gap-4 text-gray-300 hover:text-primary-400 transition-colors group"
+                  className="flex items-center gap-4 text-gray-400 hover:text-primary-400 transition-colors group"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
@@ -96,14 +96,14 @@ const Footer = () => {
                   whileTap="whileTap"
                   transition={{ delay: 0.15 }}
                 >
-                  <Phone size={20} className="text-white/60 group-hover:text-white transition-colors" />
-                  <span className="text-lg">9040575001</span>
+                  <span className="text-accent-magenta">phone:</span>
+                  <span className="text-accent-cyan">9040575001</span>
                 </motion.a>
               </div>
             </motion.div>
 
             <motion.div
-              className="glass-card p-8 glow-effect"
+              className="ide-card p-8"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -111,22 +111,23 @@ const Footer = () => {
               whileTap="whileTap"
               transition={{ delay: 0.2 }}
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-6 border-b border-editor-border pb-4">
                 <motion.div
-                  className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-white shadow-sm"
+                  className="w-10 h-10 bg-editor-bg border border-editor-border rounded flex items-center justify-center text-primary-400 shadow-neon-green"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                 >
                   <Location size={20} />
                 </motion.div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Location</h3>
-                  <p className="text-gray-400">Odisha, India</p>
+                  <h3 className="text-xl font-bold text-white font-mono">system.location()</h3>
+                  <p className="text-gray-400 font-mono text-sm mt-1">Current coordinates</p>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed">
-                Junagarh, Kalahandi, Odisha - 766014.<br />
-                Available for remote opportunities and open to relocation.
+              <p className="text-gray-400 leading-relaxed font-mono text-sm">
+                <span className="text-accent-magenta">region:</span> <span className="text-accent-amber">"Odisha, India"</span><br />
+                <span className="text-accent-magenta">zipcode:</span> <span className="text-accent-cyan">766014</span><br />
+                <span className="text-accent-magenta">status:</span> <span className="text-primary-500">"Available for remote"</span>
               </p>
             </motion.div>
           </motion.div>
@@ -141,7 +142,7 @@ const Footer = () => {
           >
             {/* Contact Form */}
             <motion.div
-              className="glass-card p-8 glow-effect"
+              className="ide-card p-8"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -149,13 +150,13 @@ const Footer = () => {
               whileTap="whileTap"
               transition={{ delay: 0.3 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
-              <form className="space-y-6">
+              <h3 className="text-xl font-bold text-primary-400 mb-6 font-mono border-b border-editor-border pb-4">POST /api/messages</h3>
+              <form className="space-y-6 font-mono text-sm">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <motion.input
                     type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 transition-all duration-300"
+                    placeholder="req.body.name"
+                    className="w-full px-4 py-3 bg-editor-bg border border-editor-border rounded text-white placeholder-gray-600 focus:outline-none focus:border-primary-400 transition-all duration-300"
                     variants={fadeUp3D}
                     initial="hidden"
                     whileInView="visible"
@@ -163,8 +164,8 @@ const Footer = () => {
                   />
                   <motion.input
                     type="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 transition-all duration-300"
+                    placeholder="req.body.email"
+                    className="w-full px-4 py-3 bg-editor-bg border border-editor-border rounded text-white placeholder-gray-600 focus:outline-none focus:border-primary-400 transition-all duration-300"
                     variants={fadeUp3D}
                     initial="hidden"
                     whileInView="visible"
@@ -173,17 +174,17 @@ const Footer = () => {
                 </div>
                 <motion.input
                   type="text"
-                  placeholder="Subject"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 transition-all duration-300"
+                  placeholder="req.body.subject"
+                  className="w-full px-4 py-3 bg-editor-bg border border-editor-border rounded text-white placeholder-gray-600 focus:outline-none focus:border-primary-400 transition-all duration-300"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
                   transition={{ delay: 0.6 }}
                 />
                 <motion.textarea
-                  placeholder="Your Message"
+                  placeholder="req.body.message"
                   rows="5"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-editor-bg border border-editor-border rounded text-white placeholder-gray-600 focus:outline-none focus:border-primary-400 transition-all duration-300 resize-none"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
@@ -191,7 +192,7 @@ const Footer = () => {
                 />
                 <motion.button
                   type="submit"
-                  className="btn-primary w-full py-3 text-lg font-semibold flex items-center justify-center"
+                  className="btn-primary w-full py-3 text-sm font-bold flex items-center justify-center font-mono"
                   variants={hoverTilt}
                   initial="hidden"
                   whileInView="visible"
@@ -199,14 +200,14 @@ const Footer = () => {
                   whileTap="whileTap"
                   transition={{ delay: 0.8 }}
                 >
-                  Send Message
+                  {`{`}"status": "SEND_REQUEST"{`}`}
                 </motion.button>
               </form>
             </motion.div>
 
             {/* Social Links */}
             <motion.div
-              className="glass-card p-8 glow-effect"
+              className="ide-card p-8"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -214,13 +215,13 @@ const Footer = () => {
               whileTap="whileTap"
               transition={{ delay: 0.4 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
-              <div className="flex justify-center space-x-6">
+              <h3 className="text-xl font-bold text-primary-400 mb-6 font-mono border-b border-editor-border pb-4">Network Activity</h3>
+              <div className="flex justify-start space-x-6">
                 <motion.a
                   href="https://github.com/Chinmaya2438"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-primary-500/20 transition-all duration-300 group"
+                  className="p-3 bg-editor-bg border border-editor-border hover:border-primary-400 rounded hover:bg-primary-500/10 transition-all duration-300 group"
                   variants={hoverTilt}
                   initial="hidden"
                   whileInView="visible"
@@ -228,13 +229,13 @@ const Footer = () => {
                   whileTap="whileTap"
                   transition={{ delay: 0.5 }}
                 >
-                  <Github size={24} className="text-gray-300 group-hover:text-white transition-colors" />
+                  <Github size={20} className="text-gray-400 group-hover:text-primary-400 transition-colors" />
                 </motion.a>
                 <motion.a
                   href="https://www.linkedin.com/in/chinmaya-panda-30a3ba3a6/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-primary-500/20 transition-all duration-300 group"
+                  className="p-3 bg-editor-bg border border-editor-border hover:border-primary-400 rounded hover:bg-primary-500/10 transition-all duration-300 group"
                   variants={hoverTilt}
                   initial="hidden"
                   whileInView="visible"
@@ -242,7 +243,7 @@ const Footer = () => {
                   whileTap="whileTap"
                   transition={{ delay: 0.6 }}
                 >
-                  <Linkedin size={24} className="text-gray-300 group-hover:text-white transition-colors" />
+                  <Linkedin size={20} className="text-gray-400 group-hover:text-primary-400 transition-colors" />
                 </motion.a>
               </div>
             </motion.div>
@@ -259,33 +260,34 @@ const Footer = () => {
           transition={{ delay: 0.6 }}
         >
           <motion.div
-            className="glass-card p-10 glow-effect border-glow-hover inline-block"
+            className="ide-card p-10 inline-block text-left"
             variants={hoverTilt}
             initial="hidden"
             whileInView="visible"
             whileHover="whileHover"
             whileTap="whileTap"
           >
-            <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 mb-4 tracking-tight">
-              Let's Build the Future
+            <div className="text-3xl font-bold text-gray-100 font-mono mb-4">
+              Deploy the future.
             </div>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Whether you need a scalable backend API, authentication system, or full-stack solution, 
-              I'm ready to help you create robust and maintainable software.
+            <p className="text-gray-400 mb-8 max-w-2xl mx-auto font-mono text-sm leading-relaxed">
+              <span className="text-accent-magenta">function</span> <span className="text-accent-cyan">collaborate</span>() {'{'} <br/>
+              &nbsp;&nbsp;<span className="text-accent-magenta">return</span> <span className="text-accent-amber">"Ready to create robust APIs and scalable database architectures."</span>;<br/>
+              {'}'}
             </p>
             <motion.a
               href="mailto:pandachinmay38@gmail.com"
-              className="btn-primary inline-flex items-center justify-center gap-4 text-lg px-8 py-4"
+              className="btn-primary inline-flex items-center justify-center gap-4 px-8 py-3 w-full"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Start a Project</span>
+              <span className="font-mono text-sm">Execute mailto:</span>
               <motion.div
-                className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center"
+                className="w-6 h-6 flex items-center justify-center"
                 animate={{ x: [0, 10, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
-                <Mail size={24} />
+                <Mail size={20} />
               </motion.div>
             </motion.a>
           </motion.div>

@@ -55,7 +55,7 @@ const Experience = () => {
             initial="hidden"
             whileInView="visible"
           >
-            Professional Experience
+            ~/experience $ <span className="text-primary-400 animate-blink">_</span>
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
@@ -71,9 +71,9 @@ const Experience = () => {
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-white/10"></div>
+          <div className="absolute left-[39px] top-4 bottom-0 w-0.5 bg-editor-border"></div>
           
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -84,19 +84,18 @@ const Experience = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delayChildren: index * 0.1 }}
               >
-                {/* Timeline Dot with Premium Animation */}
+                {/* Git Commit Node */}
                 <motion.div
-                  className="timeline-dot absolute left-6 z-10"
-                  variants={timelineDot}
+                  className="absolute left-8 top-6 z-10 w-5 h-5 rounded-full border-4 border-primary-500 bg-background-950 shadow-[0_0_10px_rgba(16,185,129,0.5)]"
+                  variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
-                  whileHover="pulse"
                   transition={{ delay: index * 0.1 }}
                 />
 
-                {/* Content Card with 3D Effect */}
+                {/* Content Card with IDE Effect */}
                 <motion.div
-                  className="glass-card p-8 ml-16 glow-effect card-3d"
+                  className="ide-card ml-20"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
@@ -104,65 +103,44 @@ const Experience = () => {
                   whileTap="whileTap"
                   transition={{ delay: index * 0.15 }}
                 >
-                  {/* Header */}
-                  <motion.div
-                    className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6"
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                  >
-                    <div>
+                  <div className="ide-header flex-col items-start gap-1 p-4">
+                    <div className="flex items-center gap-2 text-xs font-mono text-gray-500 w-full border-b border-editor-border/50 pb-2 mb-2">
+                       <span className="text-accent-amber">commit</span> 
+                       <span className="text-accent-cyan">{Math.random().toString(36).substring(2, 9)}</span>
+                       <span className="ml-auto flex items-center gap-2"><Calendar size={12} /> {exp.period}</span>
+                    </div>
+                    <div className="w-full flex justify-between items-center">
                       <motion.h3 
-                        className="text-2xl font-bold text-white mb-2"
-                        variants={fadeUp3D}
-                        initial="hidden"
-                        whileInView="visible"
+                        className="text-xl font-bold text-gray-100 font-mono"
                       >
                         {exp.title}
                       </motion.h3>
                       <motion.p 
-                        className="text-white/70 font-medium text-lg"
-                        variants={fadeUp3D}
-                        initial="hidden"
-                        whileInView="visible"
-                        transition={{ delay: 0.1 }}
+                        className="text-primary-400 font-mono text-sm bg-primary-500/10 px-3 py-1 rounded"
                       >
-                        {exp.company}
+                        @{exp.company}
                       </motion.p>
                     </div>
-                    <motion.div 
-                      className="flex items-center gap-3 text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10"
-                      variants={fadeUp3D}
-                      initial="hidden"
-                      whileInView="visible"
-                      transition={{ delay: 0.2 }}
-                    >
-                      <Calendar size={20} />
-                      <span className="font-mono">{exp.period}</span>
-                    </motion.div>
-                  </motion.div>
+                  </div>
 
                   {/* Description List */}
-                  <motion.ul 
-                    className="space-y-3 mb-6"
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                  >
+                  <div className="ide-body bg-editor-bg p-6">
+                    <motion.ul 
+                      className="space-y-2 mb-6 font-mono text-sm text-gray-400"
+                      variants={staggerContainer}
+                      initial="hidden"
+                      whileInView="visible"
+                    >
                     {exp.description.map((item, itemIndex) => (
                       <motion.li
                         key={itemIndex}
-                        className="flex items-start gap-4 text-gray-300"
+                        className="flex items-start gap-4"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
                         transition={{ delay: index * 0.15 + itemIndex * 0.05 }}
                       >
-                        <motion.div
-                          className="w-2 h-2 bg-white/40 rounded-full mt-2.5 flex-shrink-0"
-                          animate={{ scale: [1, 1.2, 1], backgroundColor: ['rgba(255,255,255,0.4)', 'rgba(255,255,255,0.8)', 'rgba(255,255,255,0.4)'] }}
-                          transition={{ duration: 2, repeat: Infinity, delay: itemIndex * 0.1 }}
-                        />
+                        <span className="text-accent-magenta mt-1">+</span>
                         <span className="leading-relaxed">{item}</span>
                       </motion.li>
                     ))}
@@ -178,17 +156,18 @@ const Experience = () => {
                     {exp.tech.map((tech, techIndex) => (
                       <motion.span
                         key={techIndex}
-                        className="px-3 py-1 bg-white/5 text-gray-300 text-sm rounded-full border border-white/10 font-mono"
+                        className="px-2 py-1 bg-editor-header text-accent-cyan text-xs rounded border border-editor-border font-mono shadow-sm"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
-                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
+                        whileHover={{ scale: 1.05, borderColor: '#22d3ee' }}
                         transition={{ delay: index * 0.15 + exp.description.length * 0.05 + techIndex * 0.05 }}
                       >
                         {tech}
                       </motion.span>
                     ))}
                   </motion.div>
+                  </div>
                 </motion.div>
               </motion.div>
             ))}
@@ -205,7 +184,7 @@ const Experience = () => {
           transition={{ delay: 0.4 }}
         >
           <motion.div
-            className="inline-flex items-center gap-4 glass-card p-6 glow-effect"
+            className="inline-flex items-center gap-4 ide-card p-4"
             variants={hoverTilt}
             initial="hidden"
             whileInView="visible"
@@ -213,13 +192,11 @@ const Experience = () => {
             whileTap="whileTap"
           >
             <motion.div
-              className="w-3 h-3 bg-white/80 rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-              animate={{ scale: [1, 1.5, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-3 h-3 bg-primary-500 rounded-full animate-blink shadow-neon-green"
             />
-            <div>
-              <span className="text-gray-400">Currently seeking new opportunities</span>
-              <div className="text-white font-semibold">Let's build something amazing together</div>
+            <div className="text-left">
+              <span className="text-gray-500 font-mono text-sm">Status:</span>
+              <div className="text-gray-300 font-mono text-sm">Awaiting pull request (Seeking new roles)</div>
             </div>
           </motion.div>
         </motion.div>

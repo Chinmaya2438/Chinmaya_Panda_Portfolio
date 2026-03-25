@@ -54,10 +54,10 @@ const Certifications = () => {
             initial="hidden"
             whileInView="visible"
           >
-            Certifications & Achievements
+            ~/certifications $ <span className="text-primary-400 animate-blink">_</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-mono mt-4"
             variants={fadeUp3D}
             initial="hidden"
             whileInView="visible"
@@ -71,7 +71,7 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              className="glass-card p-8 card-3d group relative"
+              className="ide-card group flex flex-col h-full"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -79,16 +79,23 @@ const Certifications = () => {
               whileTap="whileTap"
               transition={{ delay: index * 0.15 }}
             >
+              <div className="ide-header justify-between text-xs font-mono text-gray-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-accent-cyan">cert_{index + 1}.pem</span>
+                </div>
+                <span className="text-primary-500 bg-primary-500/10 px-2 py-0.5 rounded">Verified</span>
+              </div>
+              
               {/* Content */}
-              <div className="relative z-10">
+              <div className="ide-body p-6 flex-1 flex flex-col z-10">
                 <motion.div
-                  className="flex items-start gap-4 mb-6"
+                  className="flex flex-col sm:flex-row items-start gap-4 mb-6"
                   variants={staggerContainer}
                   initial="hidden"
                   whileInView="visible"
                 >
                   <motion.div
-                    className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-white border border-white/10 shadow-sm group-hover:scale-110 transition-transform duration-300"
+                    className="w-14 h-14 bg-background-950 rounded flex items-center justify-center text-primary-400 border border-editor-border shadow-neon-green flex-shrink-0"
                     variants={glowPulse}
                     initial="hidden"
                     whileInView="visible"
@@ -99,7 +106,7 @@ const Certifications = () => {
                   </motion.div>
                   <div className="flex-1">
                     <motion.h3 
-                      className="text-xl font-bold text-white mb-2 transition-colors"
+                      className="text-lg font-bold text-gray-100 mb-2 font-mono leading-tight"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
@@ -107,16 +114,16 @@ const Certifications = () => {
                       {cert.title}
                     </motion.h3>
                     <motion.p 
-                      className="text-white/70 font-medium text-sm mb-2"
+                      className="text-accent-amber font-mono text-sm mb-3"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
                       transition={{ delay: 0.1 }}
                     >
-                      {cert.issuer}
+                      issuer: "{cert.issuer}"
                     </motion.p>
                     <motion.span 
-                      className="inline-block px-3 py-1 bg-white/5 text-gray-400 text-xs rounded-full border border-white/10"
+                      className="inline-block px-2 py-1 bg-editor-header text-gray-400 text-xs border border-editor-border font-mono rounded"
                       variants={fadeUp3D}
                       initial="hidden"
                       whileInView="visible"
@@ -128,7 +135,7 @@ const Certifications = () => {
                 </motion.div>
 
                 <motion.p 
-                  className="text-gray-400 leading-relaxed text-sm"
+                  className="text-gray-400 leading-relaxed text-sm font-mono mt-auto"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"

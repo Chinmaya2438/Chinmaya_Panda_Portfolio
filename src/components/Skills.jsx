@@ -71,10 +71,10 @@ const Skills = () => {
             initial="hidden"
             whileInView="visible"
           >
-            Technical Skills
+            ~/skills $ <span className="text-primary-400 animate-blink">_</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-mono mt-4"
             variants={fadeUp3D}
             initial="hidden"
             whileInView="visible"
@@ -88,7 +88,7 @@ const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="glass-card p-8 glow-effect card-3d"
+              className="ide-card p-6 border border-editor-border/50"
               variants={fadeUp3D}
               initial="hidden"
               whileInView="visible"
@@ -98,13 +98,13 @@ const Skills = () => {
             >
               {/* Category Header */}
               <motion.div
-                className="flex items-center gap-4 mb-8"
+                className="flex items-center gap-4 mb-8 border-b border-editor-border/50 pb-4"
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
               >
                 <motion.div
-                  className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-white shadow-sm"
+                  className="w-12 h-12 bg-editor-bg border border-editor-border rounded flex items-center justify-center text-primary-400 shadow-sm"
                   variants={glowPulse}
                   initial="hidden"
                   whileInView="visible"
@@ -115,7 +115,7 @@ const Skills = () => {
                 </motion.div>
                 <div>
                   <motion.h3 
-                    className="text-2xl font-bold text-white mb-2"
+                    className="text-xl font-bold text-gray-100 font-mono"
                     variants={fadeUp3D}
                     initial="hidden"
                     whileInView="visible"
@@ -123,7 +123,7 @@ const Skills = () => {
                     {category.title}
                   </motion.h3>
                   <motion.div 
-                    className="w-20 h-1 bg-white/30 rounded-full"
+                    className="w-16 h-0.5 bg-primary-500/50 mt-2"
                     variants={fadeUp3D}
                     initial="hidden"
                     whileInView="visible"
@@ -151,17 +151,17 @@ const Skills = () => {
                     transition={{ delay: categoryIndex * 0.15 + skillIndex * 0.08 }}
                   >
                     {/* Skill Header */}
-                    <div className="flex justify-between items-center mb-2">
+                    <div className="flex justify-between items-center mb-2 font-mono text-sm">
                       <motion.span 
-                        className="text-white font-semibold transition-colors"
+                        className="text-gray-300 transition-colors group-hover:text-primary-400"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
                       >
-                        {skill.name}
+                        {'>'} {skill.name}
                       </motion.span>
                       <motion.span 
-                        className="text-gray-400 text-sm font-mono"
+                        className="text-accent-cyan"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
@@ -174,14 +174,14 @@ const Skills = () => {
                     {/* Progress Bar */}
                     <div className="relative">
                       <motion.div
-                        className="w-full h-3 bg-white/10 rounded-full overflow-hidden"
+                        className="w-full h-1 bg-editor-border rounded-none overflow-hidden"
                         variants={fadeUp3D}
                         initial="hidden"
                         whileInView="visible"
                         transition={{ delay: 0.1 }}
                       >
                         <motion.div
-                          className="h-full bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                          className="h-full bg-primary-500 rounded-none shadow-neon-green"
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ 
@@ -209,7 +209,7 @@ const Skills = () => {
           transition={{ delay: 0.4 }}
         >
           <motion.div
-            className="glass-card p-8 glow-effect"
+            className="ide-card p-8"
             variants={hoverTilt}
             initial="hidden"
             whileInView="visible"
@@ -217,10 +217,10 @@ const Skills = () => {
             whileTap="whileTap"
           >
             <div className="flex items-center gap-4 mb-6">
-              <ReactIcon size={32} className="text-white" />
+              <ReactIcon size={24} className="text-primary-500 animate-spin-slow" />
               <div>
-                <h3 className="text-xl font-bold text-white">Additional Technologies</h3>
-                <p className="text-gray-400">Familiar with modern frontend and development tools</p>
+                <h3 className="text-xl font-bold text-gray-100 font-mono">System Dependencies</h3>
+                <p className="text-gray-400 font-mono text-xs mt-1">Installed global packages and development tools</p>
               </div>
             </div>
             
@@ -228,11 +228,11 @@ const Skills = () => {
               {["React", "Tailwind CSS", "Framer Motion", "Vite", "NPM", "Yarn", "Docker", "AWS Basics"].map((tech, index) => (
                 <motion.span
                   key={index}
-                  className="px-4 py-2 bg-white/5 text-gray-300 rounded-full border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 font-mono text-sm"
+                  className="px-3 py-1.5 bg-background-950 text-accent-cyan rounded border border-editor-border hover:border-accent-cyan hover:bg-accent-cyan/10 transition-all duration-300 font-mono text-sm"
                   variants={fadeUp3D}
                   initial="hidden"
                   whileInView="visible"
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ delay: 0.5 + index * 0.05 }}
                 >
                   {tech}

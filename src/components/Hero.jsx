@@ -46,168 +46,109 @@ const Hero = () => {
       
       {/* Floating Background Elements */}
       <div className="absolute inset-0">
-        <motion.div
-          className="floating-shape top-20 left-10 w-96 h-96 bg-gradient-to-r from-primary-500/20 to-blue-500/20"
-          variants={floating}
-          animate="float"
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="floating-shape top-40 right-10 w-[500px] h-[500px] bg-gradient-to-r from-blue-500/15 to-cyan-500/15"
-          variants={floating}
-          animate="float"
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-        <motion.div
-          className="floating-shape bottom-20 left-1/3 w-80 h-80 bg-gradient-to-r from-cyan-500/15 to-primary-500/15"
-          variants={floating}
-          animate="float"
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        />
+
       </div>
 
 
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
         {/* Main Content */}
-        <motion.div
-          className="glass-card p-10 md:p-16 glow-effect"
-          variants={fadeUp3D}
-          initial="hidden"
-          animate="visible"
-          whileHover="whileHover"
-          whileTap="whileTap"
-        >
-          {/* Name with Premium Gradient */}
-          <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.span 
-              className="text-white"
-              variants={fadeUp3D}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.2 }}
-            >
-              Chinmaya
-            </motion.span>{' '}
-            <motion.span 
-              className="text-white"
-              variants={fadeUp3D}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.4 }}
-            >
-              Panda
-            </motion.span>
-          </motion.h1>
-
-          {/* Animated Title */}
-          <motion.p
-            className="text-2xl md:text-3xl text-gray-300 mb-8 font-light tracking-wide"
-            variants={fadeUp3D}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.6 }}
-          >
-            <span className="inline-block border-r-2 border-white/50 pr-2">
-              {displayText}
-            </span>
-            <span className="animate-pulse">|</span>
-          </motion.p>
-
-          {/* Professional Summary */}
-          <motion.p
-            className="text-gray-400 text-lg md:text-xl leading-relaxed mb-12 max-w-4xl mx-auto"
-            variants={fadeUp3D}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.8 }}
-          >
-            Backend Developer specializing in Node.js and MongoDB with practical experience building authentication-driven web applications. 
-            Strong understanding of REST API architecture, secure session management, and structured database design. 
-            Passionate about building scalable and production-ready backend systems.
-          </motion.p>
-
-          {/* CTA Buttons with Premium Design */}
+        {/* Split Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            variants={staggerContainer}
+            className="text-left"
+            variants={fadeUp3D}
             initial="hidden"
             animate="visible"
-            transition={{ delayChildren: 1 }}
           >
-            <motion.a 
-              href="#projects"
-              className="btn-primary flex items-center gap-3 text-lg font-semibold group"
-              variants={hoverTilt}
-              initial="hidden"
-              animate="visible"
-              whileHover="whileHover"
-              whileTap="whileTap"
-              transition={{ delay: 1 }}
-            >
-              <span>View Projects</span>
-              <motion.div
-                className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/40 transition-colors"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1, repeat: Infinity }}
-              >
-                <ChevronDown size={16} />
-              </motion.div>
-            </motion.a>
-            
-            <motion.a 
-              href="/resume.pdf" 
-              download="Chinmaya_Panda_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary flex items-center gap-3 text-lg font-semibold group"
-              variants={hoverTilt}
-              initial="hidden"
-              animate="visible"
-              whileHover="whileHover"
-              whileTap="whileTap"
-              transition={{ delay: 1.2 }}
-            >
-              <Download size={20} />
-              <span>Download Resume</span>
-            </motion.a>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator with Premium Animation */}
-        <motion.div
-          className="mt-16 flex justify-center"
-          variants={fadeUp3D}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1.4 }}
-        >
-          <motion.a 
-            href="#about" 
-            className="flex flex-col items-center text-gray-400 hover:text-white transition-all duration-300 group"
-            whileHover={{ y: -5 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-sm mb-3 tracking-wide opacity-70 group-hover:opacity-100 transition-opacity">
-              Explore My Journey
-            </span>
-            <motion.div
-              className="w-8 h-12 border-2 border-white/20 rounded-full flex justify-center"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <motion.div
-                className="w-1.5 h-1.5 bg-white/50 rounded-full mt-2 group-hover:bg-white transition-colors"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
-              />
+            <motion.div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-primary-500/10 border border-primary-500/30 text-primary-400 font-mono text-sm shadow-neon-green">
+              <div className="w-2 h-2 rounded-full bg-primary-500 animate-blink"></div>
+              <span>System.out.println("Hello World");</span>
             </motion.div>
-          </motion.a>
-        </motion.div>
+            
+            <motion.h1
+              className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight tracking-tight"
+            >
+              <span className="text-white block">Chinmaya</span>
+              <span className="text-primary-400 block">Panda</span>
+            </motion.h1>
+
+            <motion.p
+              className="text-xl md:text-2xl bg-editor-bg/50 p-3 rounded-md border border-editor-border mb-6 font-mono shadow-sm inline-block"
+            >
+              <span className="text-highlight">const</span> <span className="text-white">role</span> <span className="text-accent-cyan">=</span> <span className="text-string">'{displayText}'</span><span className="animate-blink">|</span>
+            </motion.p>
+
+            <motion.p
+              className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl"
+            >
+              Backend Developer specializing in Node.js and MongoDB with practical experience building authentication-driven web applications. Strong understanding of REST API architecture, secure session management, and structured database design.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <motion.a 
+                href="#projects"
+                className="btn-primary"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Execute Projects
+              </motion.a>
+              <motion.a 
+                href="/resume.pdf" 
+                download="Chinmaya_Panda_Resume.pdf"
+                className="btn-secondary"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Download Resume
+              </motion.a>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - IDE Window */}
+          <motion.div
+            className="ide-card w-full max-w-lg mx-auto lg:mx-0 hidden md:block"
+            variants={fadeUp3D}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4 }}
+          >
+            <div className="ide-header justify-between">
+              <div className="flex space-x-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-accent-amber"></div>
+                <div className="w-3 h-3 rounded-full bg-primary-500"></div>
+              </div>
+              <div className="text-gray-400 text-xs font-mono">portfolio.json</div>
+            </div>
+            <div className="ide-body text-base">
+              <div className="text-accent-cyan">&#123;</div>
+              <div className="ml-6 py-1">
+                <span className="text-highlight">"name"</span>: <span className="text-string">"Chinmaya Panda"</span>,
+              </div>
+              <div className="ml-6 py-1">
+                <span className="text-highlight">"role"</span>: <span className="text-string">"Backend Developer"</span>,
+              </div>
+              <div className="ml-6 py-1">
+                <span className="text-highlight">"skills"</span>: [
+              </div>
+              <div className="ml-12 py-1 text-string">
+                "Node.js", "Express", "MongoDB", "Java"
+              </div>
+              <div className="ml-6 py-1">],</div>
+              <div className="ml-6 py-1">
+                <span className="text-highlight">"status"</span>: <span className="text-number">200</span>,
+              </div>
+              <div className="ml-6 py-1">
+                <span className="text-highlight">"passion"</span>: <span className="text-string">"Building Scalable Systems"</span>
+              </div>
+              <div className="text-accent-cyan">&#125;</div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </motion.section>
   )
